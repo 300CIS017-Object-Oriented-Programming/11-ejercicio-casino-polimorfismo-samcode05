@@ -1,18 +1,31 @@
-// Juego.h
-#ifndef JUEGO_H
-#define JUEGO_H
-#include "Jugador.h"
-#include <string>
+Juego.h:
+//
+// Created by lufe0 on 7/05/2021.
+//
+
+\#ifndef CASINO\_JUEGO\_H
+\#define CASINO\_JUEGO\_H
+
+\#include "Jugador.h"
 
 class Juego {
 protected:
-    std::string nombre;
+int numeroCasino;
+int numeroJugador;
+
+virtual float calcularResultado(float gonzosApostar) = 0;
+
+
 public:
-    Juego(std::string nombre) : nombre(nombre) {}
-    virtual int jugar(Jugador& jugador, int apuesta) = 0;
-    virtual void mostrarReglas() = 0;
-    std::string getNombre() { return nombre; }
-    virtual ~Juego() {}
+Juego() = default;
+
+virtual ~Juego() = default;
+
+virtual float jugar(float gonzosApostar) = 0;
+
+
 };
 
-#endif
+\#endif //CASINO\_JUEGO\_H
+
+
