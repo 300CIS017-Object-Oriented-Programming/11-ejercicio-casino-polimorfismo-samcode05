@@ -13,6 +13,8 @@
 #include "Mayor13.h"
 #include "DosColores.h"
 #include "Slots.h"
+#include "ParImpar.h"
+
 
 
 using std::cin;
@@ -50,6 +52,9 @@ public:
     void verInfoJugador(long idJugador);
 
     void recargarGonzos(long idJugador);
+
+    void mostrarJugadores() const;
+
 
 };
 

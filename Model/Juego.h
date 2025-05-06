@@ -1,27 +1,31 @@
+Juego.h:
 //
 // Created by lufe0 on 7/05/2021.
 //
 
-#ifndef CASINO_JUEGO_H
-#define CASINO_JUEGO_H
+\#ifndef CASINO\_JUEGO\_H
+\#define CASINO\_JUEGO\_H
 
-#include "Jugador.h"
+\#include "Jugador.h"
 
 class Juego {
 protected:
-    int numeroCasino;
-    int numeroJugador;
+int numeroCasino;
+int numeroJugador;
 
-    virtual float calcularResultado(float gonzosApostar) = 0;
+virtual float calcularResultado(float gonzosApostar) = 0;
+
 
 public:
-    Juego() = default;
+Juego() = default;
 
-    virtual ~Juego() = default;
+virtual ~Juego() = default;
 
-    virtual float jugar(float gonzosApostar) = 0;
+virtual float jugar(float gonzosApostar) = 0;
 
 
 };
 
-#endif //CASINO_JUEGO_H
+\#endif //CASINO\_JUEGO\_H
+
+

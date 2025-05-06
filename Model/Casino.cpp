@@ -18,6 +18,9 @@ Casino::Casino() {
     juegosDisponibles.push_back(juego2);
     auto *slots = new Slots();
     juegosDisponibles.push_back(slots);
+    auto *slots = new Slots();
+    juegosDisponibles.push_back(slots);
+
 }
 
 void Casino::agregarJugador() {
@@ -142,6 +145,14 @@ void Casino::recargarGonzos(long idJugador) {
     pJugador->actualizarGonzos(gonzos);
 }
 
+void Casino::mostrarJuegos() const {
+  for (size_t i = 0; i < juegosDisponibles.size(); ++i) {
+    cout << (i+1) << ". ";
+    juegosDisponibles[i]->mostrarReglas();
+  }
+}
+
+
 
 bool Casino::verExisteJugador(long id) {
 
@@ -173,3 +184,11 @@ Casino::~Casino() {
     }
     cout << "Termine de llamar destructor de casino \n";
 }
+
+bool Casino::verPuedeContinuar(int id, float gonzosApostar) {
+    ...
+-   if (pJugador->getCantGonzos() < gonzosApostar) return false;
++   if (pJugador->getCantGonzos() < 2 * gonzosApostar) return false;
+    return true;
+}
+
