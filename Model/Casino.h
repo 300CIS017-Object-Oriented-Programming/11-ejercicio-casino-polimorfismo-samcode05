@@ -53,6 +53,9 @@ public:
 
     void recargarGonzos(long idJugador);
 
+    void mostrarJugadores() const;
+
+
 };
 
 #endif //CASINO_CASINO_H
