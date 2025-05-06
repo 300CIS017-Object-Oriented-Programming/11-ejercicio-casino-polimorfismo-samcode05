@@ -1,27 +1,18 @@
-//
-// Created by lufe0 on 7/05/2021.
-//
-
-#ifndef CASINO_JUEGO_H
-#define CASINO_JUEGO_H
-
+// Juego.h
+#ifndef JUEGO_H
+#define JUEGO_H
 #include "Jugador.h"
+#include <string>
 
 class Juego {
 protected:
-    int numeroCasino;
-    int numeroJugador;
-
-    virtual float calcularResultado(float gonzosApostar) = 0;
-
+    std::string nombre;
 public:
-    Juego() = default;
-
-    virtual ~Juego() = default;
-
-    virtual float jugar(float gonzosApostar) = 0;
-
-
+    Juego(std::string nombre) : nombre(nombre) {}
+    virtual int jugar(Jugador& jugador, int apuesta) = 0;
+    virtual void mostrarReglas() = 0;
+    std::string getNombre() { return nombre; }
+    virtual ~Juego() {}
 };
 
-#endif //CASINO_JUEGO_H
+#endif
