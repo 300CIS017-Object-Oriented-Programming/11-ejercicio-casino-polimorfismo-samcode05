@@ -176,3 +176,11 @@ Casino::~Casino() {
     }
     cout << "Termine de llamar destructor de casino \n";
 }
+
+bool Casino::verPuedeContinuar(int id, float gonzosApostar) {
+    ...
+-   if (pJugador->getCantGonzos() < gonzosApostar) return false;
++   if (pJugador->getCantGonzos() < 2 * gonzosApostar) return false;
+    return true;
+}
+
