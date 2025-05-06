@@ -145,6 +145,14 @@ void Casino::recargarGonzos(long idJugador) {
     pJugador->actualizarGonzos(gonzos);
 }
 
+void Casino::mostrarJuegos() const {
+  for (size_t i = 0; i < juegosDisponibles.size(); ++i) {
+    cout << (i+1) << ". ";
+    juegosDisponibles[i]->mostrarReglas();
+  }
+}
+
+
 
 bool Casino::verExisteJugador(long id) {
 
